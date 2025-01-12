@@ -1,0 +1,29 @@
+{
+  "type": "module",
+  "name": "african-american-studies-api",
+  "version": "0.1.0",
+  "description": "Practice project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test-me",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n/a.git"
+  },
+  "keywords": [
+    "practice",
+    "makes",
+    "perfect"
+  ],
+  "author": "Shayne McGregor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/n/a/issues"
+  },
+  "homepage": "https://github.com/n/a#readme",
+  "dependencies": {
+    "uuid": "^11.0.3"
+  }
+}

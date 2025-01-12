@@ -8,10 +8,11 @@ const books = [
 ];
 
 const server = http.createServer(function (request, response) {
-    const url = new URL(request.url, `http://$request.headers.host`);
+    const url = new URL(request.url, `http://${request.headers.host}`);
+    console.log(url);
 
     if (url.pathname === `/` && url.searchParams.has('pubYear')) {
-        const pubYear = parseInt(url.searchParams.get('pubYear'), 10);
+        const pubYear = url.searchParams.get('pubYear');
         const filteredBooks = books.filter(
             function (book) {
                 return book.pubYear === pubYear;
@@ -20,6 +21,7 @@ const server = http.createServer(function (request, response) {
 
         response.writeHead(200, { 'Content-Type': 'application/json' });
         response.end(JSON.stringify(filteredBooks));
+        console.log('The request was successfull');
     } else {
         response.writeHead(404, { 'Content-Type': 'text/plain' });
         response.end('Endpoint not found');

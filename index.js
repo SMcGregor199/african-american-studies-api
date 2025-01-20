@@ -61,7 +61,6 @@ const server = http.createServer(function (request, response) {
         request.on('data', function (chunk) {
             body += chunk.toString();
         });
-        console.log(body);
         request.on('end', function () {
             const { title, pubYear, authors, publisher, category } = JSON.parse(body);
             const newBook = addBook(title, pubYear, authors, publisher, category);

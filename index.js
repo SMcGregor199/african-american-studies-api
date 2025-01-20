@@ -24,7 +24,7 @@ const saveBooks = function (books) {
 
 const addBook = function (title, pubYear, authors, publisher, category) {
     const books = getBooks();
-    const newBoook = {
+    const newBook = {
         id: uuidv4(),
         title,
         pubYear,
@@ -61,7 +61,7 @@ const server = http.createServer(function (request, response) {
         request.on('data', function (chunk) {
             body += chunk.toString();
         });
-
+        console.log(body);
         request.on('end', function () {
             const { title, pubYear, authors, publisher, category } = JSON.parse(body);
             const newBook = addBook(title, pubYear, authors, publisher, category);

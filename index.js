@@ -42,6 +42,7 @@ const server = http.createServer(function (request, response) {
     const url = new URL(request.url, `http://${request.headers.host}`);
 
 
+
     if (url.pathname === `/` && url.searchParams.has('pubYear')) {
 
         const pubYear = url.searchParams.get('pubYear');
@@ -57,6 +58,7 @@ const server = http.createServer(function (request, response) {
         response.end(JSON.stringify(filteredBooks));
         console.log('The request was successfull');
     } else if (url.pathname === '/' && request.method === 'POST') {
+
         let body = '';
         request.on('data', function (chunk) {
             body += chunk.toString();
@@ -68,6 +70,9 @@ const server = http.createServer(function (request, response) {
             response.end(JSON.stringify(newBook));
             console.log("New Book added:", newBook);
         });
+    } else if (url.pathname === '/') {
+
+
     } else {
         response.writeHead(404, { 'Content-Type': 'text/plain' });
         response.end('Endpoint not found');

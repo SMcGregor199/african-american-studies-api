@@ -2,6 +2,7 @@
 import http from 'http';
 import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
+import path from 'path';
 const PORT = 9000;
 
 
@@ -71,7 +72,17 @@ const server = http.createServer(function (request, response) {
             console.log("New Book added:", newBook);
         });
     } else if (url.pathname === '/') {
-
+        const indexPath = path.join('/public', 'index.html');
+        console.log(indexPath);
+        fs.readFile(`./${indexPath}`, 'utf-8', (err, data) => {
+            if (err) {
+                response.writeHead(404, { 'Content-Type': 'text/plain' });
+                response.end('File not found');
+            } else {
+                response.writeHead(200, { 'Content-Type': 'text/html' });
+                response.end(data);
+            }
+        });
 
     } else {
         response.writeHead(404, { 'Content-Type': 'text/plain' });

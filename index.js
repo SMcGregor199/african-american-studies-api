@@ -72,14 +72,24 @@ const server = http.createServer(function (request, response) {
             console.log("New Book added:", newBook);
         });
     } else if (url.pathname === '/') {
-        const indexPath = path.join('/public', 'index.html');
-        console.log(indexPath);
-        fs.readFile(`./${indexPath}`, 'utf-8', (err, data) => {
+        let filePath = path.join(process.cwd(), 'public', url.pathname === '/' ? 'index.html' : url.pathname);
+        const ext = path.extname(filePath);
+        console.log(filePath);
+        let contentType = 'text/html';
+        if (ext === '.js') {
+            contentType = 'application/javascript';
+        } else if (ext === '.css') {
+            contentType = 'text/css';
+        } else if (ext === '.json') {
+            contentType = 'application/json';
+        }
+
+        fs.readFile(`${filePath}`, 'utf-8', (err, data) => {
             if (err) {
                 response.writeHead(404, { 'Content-Type': 'text/plain' });
                 response.end('File not found');
             } else {
-                response.writeHead(200, { 'Content-Type': 'text/html' });
+                response.writeHead(200, { 'Content-Type': contentType });
                 response.end(data);
             }
         });

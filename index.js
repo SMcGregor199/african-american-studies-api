@@ -2,7 +2,7 @@
 import http from 'node:http';
 import fs from 'fs';
 import path from 'path';
-import { getBooks, addBook, updateBook } from '.helper.js';
+import { getBooks, addBook, updateBook } from './helper.js';
 const PORT = 9000;
 
 

@@ -1,8 +1,7 @@
 
 import http from 'node:http';
-import fs from 'fs';
 import path from 'path';
-import { getBooks, addBook, updateBook } from './helper.js';
+import { getBooks, addBook } from './helper.js';
 const PORT = 9000;
 
 
@@ -42,26 +41,27 @@ const server = http.createServer(function (request, response) {
             console.log("New Book added:", newBook);
 
         });
-    } else if (url.pathname === '/' && request.method === 'PATCH') {
-        if (url.searchParams.has('id') && url.searchParams.has('bookProperty')) {
-            let body = '';
-            request.on('data', function (chunk) {
-                body += chunk.toString();
-            });
-
-            request.on('end', function () {
-                // In this case we're going to assume that the patch will always update the title
-                const { title } = JSON.parse(body);
-
-                updateBook(title, id);
-
-            });
-        } else {
-            response.writeHead(404, { 'Content-Type': 'text/plain' });
-            response.end('Endpoint not found');
-        }
-
     }
+    // else if (url.pathname === '/' && request.method === 'PATCH') {
+    //     if (url.searchParams.has('id') && url.searchParams.has('bookProperty')) {
+    //         let body = '';
+    //         request.on('data', function (chunk) {
+    //             body += chunk.toString();
+    //         });
+
+    //         request.on('end', function () {
+    //             // In this case we're going to assume that the patch will always update the title
+    //             const { title } = JSON.parse(body);
+
+    //             updateBook(title, id);
+
+    //         });
+    //     } else {
+    //         response.writeHead(404, { 'Content-Type': 'text/plain' });
+    //         response.end('Endpoint not found');
+    //     }
+
+    // }
     else if (url.pathname === '/') {
         let filePath = path.join(process.cwd(), 'public', url.pathname === '/' ? 'index.html' : url.pathname);
         const ext = path.extname(filePath);

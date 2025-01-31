@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import fs from 'fs';
 
 const getBooks = function () {
     try {
@@ -32,20 +33,18 @@ const addBook = function (title, pubYear, authors, publisher, category) {
     saveBooks(books);
     return newBook;
 }
-const updateBook = function (bookProperty, bookId) {
-    const books = getBooks();
+// const updateBook = function (bookProperty, bookId) {
+//     const books = getBooks();
 
-    books.forEach(function (book) {
-        if (book.id == bookId) {
-            book[bookProperty] = 
-        }
-    });
+//     books.forEach(function (book) {
+//         if (book.id == bookId) {
+//             book[bookProperty] = 
+//         }
+//     });
 
-}
+// }
 
 export {
     getBooks,
-    saveBooks,
     addBook,
-    updateBook,
 }

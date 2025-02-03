@@ -2,8 +2,11 @@
 import http from 'node:http';
 import path from 'path';
 import { getBooks, addBook } from './helper.js';
+import express from 'express';
 const PORT = 9000;
 
+const app = express();
+app.use(express.static('public'));
 
 
 const server = http.createServer(function (request, response) {
@@ -42,48 +45,56 @@ const server = http.createServer(function (request, response) {
 
         });
     }
-    // else if (url.pathname === '/' && request.method === 'PATCH') {
-    //     if (url.searchParams.has('id') && url.searchParams.has('bookProperty')) {
-    //         let body = '';
-    //         request.on('data', function (chunk) {
-    //             body += chunk.toString();
-    //         });
+    else if (url.pathname === '/' && request.method === 'PATCH') {
+        let body = '';
+        request.on('data', function (chunk) {
+            body += chunk.toString();
+        });
 
-    //         request.on('end', function () {
-    //             // In this case we're going to assume that the patch will always update the title
-    //             const { title } = JSON.parse(body);
+        request.on('end', function () {
+            var parsedBody = JSON.parse(body);
+            /*console.log(typeof parsedBody);*/
+            if (parsedBody.hasOwnProperty("id")) {
+                console.log(parsedBody.id);
+                const books = getBooks();
 
-    //             updateBook(title, id);
+                var filteredBooks = books.filter(function () {
+                    return books.id == parsedBody.id
+                });
 
-    //         });
-    //     } else {
-    //         response.writeHead(404, { 'Content-Type': 'text/plain' });
-    //         response.end('Endpoint not found');
-    //     }
-
-    // }
-    else if (url.pathname === '/') {
-        let filePath = path.join(process.cwd(), 'public', url.pathname === '/' ? 'index.html' : url.pathname);
-        const ext = path.extname(filePath);
-        console.log(filePath);
-        let contentType = 'text/html';
-        if (ext === '.js') {
-            contentType = 'application/javascript';
-        } else if (ext === '.css') {
-            contentType = 'text/css';
-        } else if (ext === '.json') {
-            contentType = 'application/json';
-        }
-
-        fs.readFile(`${filePath}`, 'utf-8', (err, data) => {
-            if (err) {
-                response.writeHead(404, { 'Content-Type': 'text/plain' });
-                response.end('File not found');
-            } else {
-                response.writeHead(200, { 'Content-Type': contentType });
-                response.end(data);
+                if (filteredBooks.length != 0) {
+                    console.log(filteredBooks);
+                } else {
+                    console.log("no books match the id");
+                }
             }
         });
+
+    }
+    else if (url.pathname === '/') {
+
+        app(request, response);
+        // let filePath = path.join(process.cwd(), 'public', url.pathname === '/' ? 'index.html' : url.pathname);
+        // const ext = path.extname(filePath);
+        // console.log(filePath);
+        // let contentType = 'text/html';
+        // if (ext === '.js') {
+        //     contentType = 'application/javascript';
+        // } else if (ext === '.css') {
+        //     contentType = 'text/css';
+        // } else if (ext === '.json') {
+        //     contentType = 'application/json';
+        // }
+
+        // fs.readFile(`${filePath}`, 'utf-8', (err, data) => {
+        //     if (err) {
+        //         response.writeHead(404, { 'Content-Type': 'text/plain' });
+        //         response.end('File not found');
+        //     } else {
+        //         response.writeHead(200, { 'Content-Type': contentType });
+        //         response.end(data);
+        //     }
+        // });
 
     } else {
         response.writeHead(404, { 'Content-Type': 'text/plain' });

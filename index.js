@@ -4,9 +4,13 @@ import path from 'path';
 import { getBooks, addBook } from './helper.js';
 import express from 'express';
 const PORT = 9000;
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
-app.use(express.static('public'));
+//app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 const server = http.createServer(function (request, response) {

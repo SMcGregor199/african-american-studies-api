@@ -2,6 +2,10 @@
 import dotenv from 'dotenv';
 import http from 'node:http';
 import express from 'express';
+
+
+
+import { fileURLToPath } from 'node:url';
 import { URL } from 'node:url';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -12,8 +16,9 @@ const SERVER_TYPE = process.env.SERVER_TYPE;
 const PORT = process.env.PORT;
 
 const app = express();
-const __dirname = new URL('', import.meta.url).pathname;
-
+//const __dirname = new URL('', import.meta.url).pathname;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 if (SERVER_TYPE === 'http') {
 
     const server = http.createServer(function (request, response) {
@@ -49,9 +54,14 @@ if (SERVER_TYPE === 'http') {
 
     app.use(express.static(path.join(__dirname, 'express-public')));
 
-    // app.get('/', function (request, response) {
-    //     response.sendFile('example.html', { root: __dirname });
-    // });
+    app.get('/', function (request, response) {
+        response.sendFile(
+            path.join(__dirname, 'express-public', 'index.html')
+            //'index.html', { root: __dirname }
+
+        );
+        //response.send("HELLO");
+    });
 
     app.listen(PORT, function () {
         console.log(`Starting the ${SERVER_TYPE} server`);

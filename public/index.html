@@ -7,5 +7,11 @@
 <body>
     <h1>Testing the http module server</h1>
 </body>
+<script>
+    if (window.bookData) {
+        console.log("Filtered Books:", window.bookData);
+        document.body.innerHTML += `<pre>${JSON.stringify(window.bookData, null, 2)}</pre>`;
+    }
+</script>
 
 </html>

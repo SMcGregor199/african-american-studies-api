@@ -34,7 +34,7 @@ if (SERVER_TYPE === 'http') {
                     response.end('File not found');
                 } else {
                     let modifiedData = data;
-                    if (url.pathname === '/' && url.searchParams.has("pubYear")) {
+                    if (url.searchParams.has("pubYear")) {
                         const pubYear = url.searchParams.get("pubYear");
                         const books = getBooks();
 
@@ -45,6 +45,26 @@ if (SERVER_TYPE === 'http') {
                         );
                         const scriptTag = `<script>window.bookData = ${JSON.stringify(filteredBooks)};</script>`;
                         modifiedData = data.replace('</body>', `${scriptTag}</body>`);
+                    }
+                    else if (!url.searchParams.has("pubYear") && request.method == "POST") {
+                        let body = '';
+                        request.on('data', function (chunk) {
+                            body += chunk.toString();
+                        });
+                        console.log(body);
+
+                        request.on('end', function () {
+
+                            const { title, pubYear, authors, publisher, category } = JSON.parse(body);
+
+                            const newBook = addBook(title, pubYear, authors, publisher, category);
+
+                            const scriptTag = `<script>window.bookData = ${JSON.stringify(newBook)};</script>`;
+
+                            modifiedData = data.replace('</body>', `${scriptTag}</body>`);
+
+                        });
+
                     }
                     response.writeHead(200, { 'Content-Type': 'text/html' });
                     response.end(modifiedData);

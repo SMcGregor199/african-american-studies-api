@@ -1,28 +1,36 @@
 [
-    {
-        "id": "04951c0a-bea5-4496-9914-27bc1cb22a85",
-        "title": "Four Hundred Souls: A Community History of African America,1619-2019",
-        "pubYear": "2021",
-        "authors": [
-            "Ibram X. Kendi",
-            "Keisha N. Blain"
-        ],
-        "publisher": "One World",
-        "category": [
-            "non-fiction",
-            "essays"
-        ]
-    },
-    {
-        "id": "58afe075-81c8-4038-9366-26effd86a377",
-        "title": "Begin Again: James Baldwin's America and Its Urgent Lessons for Our Own",
-        "pubYear": "2020",
-        "authors": [
-            "Eddie S. Glaude Jr."
-        ],
-        "publisher": "Crown",
-        "category": [
-            "political science"
-        ]
-    }
+  {
+    "id": "04951c0a-bea5-4496-9914-27bc1cb22a85",
+    "title": "Four Hundred Souls: A Community History of African America,1619-2019",
+    "pubYear": "2021",
+    "authors": [
+      "Ibram X. Kendi",
+      "Keisha N. Blain"
+    ],
+    "publisher": "One World",
+    "category": [
+      "non-fiction",
+      "essays"
+    ]
+  },
+  {
+    "id": "58afe075-81c8-4038-9366-26effd86a377",
+    "title": "Begin Again: James Baldwin's America and Its Urgent Lessons for Our Own",
+    "pubYear": "2020",
+    "authors": [
+      "Eddie S. Glaude Jr."
+    ],
+    "publisher": "Crown",
+    "category": [
+      "political science"
+    ]
+  },
+  {
+    "id": "136a7274-04eb-4591-8ad7-e966567c71ad",
+    "title": "The Man-Not: Race, Class, Genre, and the Dilemmas of Black Manhood ",
+    "pubYear": "2017",
+    "authors": "Tommy J. Curry",
+    "publisher": "Temple University Press",
+    "category": "Black Male Studies"
+  }
 ]

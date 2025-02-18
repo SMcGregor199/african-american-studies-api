@@ -1,0 +1,21 @@
+<html lang="en">
+
+<head>
+    <title>The server test</title>
+</head>
+
+<body>
+    <h1>Testing the <%=serverName%> server</h1>
+    <h2>Welcome to the EJS homepage</h2>
+</body>
+<script>
+    const bookData = <%-bookData %>;
+
+    console.log(bookData);
+    //const bookData = <% -JSON.stringify(bookData, null, 2) %>;
+    //console.log(<%=bookData %>);
+    //document.body.innerHTML += `<pre>bookData</pre>`;
+
+</script>
+
+</html>

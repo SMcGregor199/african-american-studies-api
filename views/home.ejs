@@ -9,13 +9,11 @@
     <h2>Welcome to the EJS homepage</h2>
 </body>
 <script>
-    const bookData = <%-bookData %>;
+    // Pass raw JSON data from EJS
+    const bookData = JSON.parse(<%- JSON.stringify(bookData) %>);
 
-    console.log(bookData);
-    //const bookData = <% -JSON.stringify(bookData, null, 2) %>;
-    //console.log(<%=bookData %>);
-    //document.body.innerHTML += `<pre>bookData</pre>`;
-
+    // Properly format and display in <pre>
+    document.body.innerHTML += `<pre>${JSON.stringify(bookData, null, 2)}</pre>`;
 </script>
 
 </html>

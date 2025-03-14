@@ -1,19 +1,13 @@
 import express from 'express';
-const app = express();
-app.set('view engine', 'ejs');
-
 import dotenv from 'dotenv';
+import { getBooks, addBook } from './helper.js';
 dotenv.config();
-
 const SERVER_TYPE = process.env.SERVER_TYPE;
 const PORT = process.env.PORT;
+const app = express();
 
-import { getBooks, addBook } from './helper.js';
-
-
-
-
-
+dotenv.config();
+app.set('view engine', 'ejs');
 
 
 

@@ -5,15 +5,14 @@
 </head>
 
 <body>
-    <h1>Testing the <%=serverName%> server</h1>
-    <h2>Welcome to the EJS homepage. Nodemon is watching. Working on it from the work PC</h2>
+    <h1>Testing the EchoLab</h1>
 </body>
 <script>
     // Pass raw JSON data from EJS
-    const bookData = JSON.parse(<%- JSON.stringify(bookData) %>);
+    const theObject = <%- JSON.stringify(theObject) %>;
 
     // Properly format and display in <pre>
-    document.body.innerHTML += `<pre>${JSON.stringify(bookData, null, 2)}</pre>`;
+    document.body.innerHTML += `<pre>${JSON.stringify(theObject, null, 2)}</pre>`;
 </script>
 
 </html>

@@ -1,0 +1,53 @@
+{
+    "id": "frances-ellen-watkins-harper",
+    "name": "Frances Ellen Watkins Harper",
+    "birth_year": 1825,
+    "death_year": 1911,
+    "birthplace": "Baltimore, Maryland",
+    "professions": [
+      "Poet",
+      "Essayist",
+      "Abolitionist",
+      "Suffragist",
+      "Educator"
+    ],
+    "notable_works": [
+      "Iola Leroy",
+      "Poems on Miscellaneous Subjects",
+      "The Two Offers"
+    ],
+    "associated_movements": [
+      "Abolitionism",
+      "Women's Suffrage",
+      "Temperance Movement",
+      "Reconstruction Era Education"
+    ],
+    "themes": [
+      "Freedom",
+      "Black womanhood",
+      "Moral uplift",
+      "Education",
+      "Intersectionality (pre-modern)"
+    ],
+    "bio": "Frances Ellen Watkins Harper (1825–1911) was a pioneering Black poet, novelist, and activist. A gifted speaker and educator, she was a key figure in 19th-century abolitionist and suffragist movements. She was one of the first Black women to publish a novel in the U.S. and was widely read across Black and white audiences.",
+    "quote": "We are all bound up together in one great bundle of humanity.",
+    "sources": [
+      {
+        "type": "biography",
+        "title": "Frances Ellen Watkins Harper: Black Daughter of the Revolution",
+        "author": "Melba Joyce Boyd",
+        "url": "https://www.press.umich.edu/12229/frances_ellen_watkins_harper"
+      },
+      {
+        "type": "digital archive",
+        "title": "Harper Collection at Documenting the American South",
+        "url": "https://docsouth.unc.edu/harperbio.html"
+      },
+      {
+        "type": "encyclopedia",
+        "title": "Wikipedia Entry",
+        "url": "https://en.wikipedia.org/wiki/Frances_Harper"
+      }
+    ]
+  }
+  

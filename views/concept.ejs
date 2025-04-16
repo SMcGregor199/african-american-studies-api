@@ -1,0 +1,29 @@
+<html lang="en">
+
+<head>
+    <title><%=concept.term %> | Echo Lab</title>
+</head>
+<body>
+    <h1><%= concept.term %></h1>
+    <p><strong>Category:</strong> <%= concept.category %></p>
+    <p><strong>Definition:</strong> <%= concept.definition %></p>
+  
+    <h2>Appears In Titles</h2>
+    <ul>
+      <% titles.forEach(title => { %>
+        <li><strong><%= title.title %></strong> by <%= figures.find(f => f.id === title.figureId).name %></li>
+      <% }); %>
+    </ul>
+  
+    <h2>Key Figures Associated</h2>
+    <ul>
+      <% figures.forEach(figure => { %>
+        <li>
+          <a href="/figures/<%= figure.id %>"><%= figure.name %></a>
+          (<%= figure.tags.join(', ') %>)
+        </li>
+      <% }); %>
+    </ul>  
+    <p><a href="/">Back to Home</a></p>  
+</body>
+</html>

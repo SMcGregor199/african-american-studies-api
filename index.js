@@ -36,7 +36,12 @@ app.get('/concepts/:id', (req, res) => {
     if (!concept) {
         return res.status(404).send("Concept not found");
     }
-    
+    const titles = data.titles.filter(t => t.concepts.includes(conceptId));
+    const figureIds = new Set(titles.map(t => t.figureId));
+    const figures = data.figures.filter(f => figureIds.has(f.id));
+
+    res.render('concept', { concept, titles, figures });
+
 });
 
 app.get('/',function(req,res){

@@ -1,0 +1,20 @@
+[
+    {
+      "id": "iola-leroy",
+      "title": "Iola Leroy, or Shadows Uplifted",
+      "type": "novel",
+      "year": 1892,
+      "excerpt": "It was a bright spring morning when Iola Leroy looked from the car window and watched the ever-changing landscape...",
+      "figureId": "frances-harper",
+      "concepts": ["racial-uplift", "reconstruction", "passing"]
+    },
+    {
+      "id": "bury-me-in-a-free-land",
+      "title": "Bury Me in a Free Land",
+      "type": "poem",
+      "year": 1858,
+      "excerpt": "Make me a grave where’er you will, / In a lowly plain or a lofty hill...",
+      "figureId": "frances-harper",
+      "concepts": ["freedom", "abolition", "mourning"]
+    }
+  ]

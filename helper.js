@@ -1,18 +1,23 @@
 import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
+import path from 'path';
 
-const getSampleData = function(){
-    try{
-        const data = fs.readFileSync('./sample.json', 'utf8');
-        return JSON.parse(data);
-    } catch(err){
-        console.error("Error reading sample.json",err);
-        return[];
-    }
+const loadJSON = (filename) => {
+    const filePath = path.join(`./data`,filename);
+    const rawData = fs.readFileSync(filePath, 'utf8');
+    return JSON.parse(rawData);
 }
+
+const getAllData = () => {
+    return {
+      figures: loadJSON('figures.json'),
+      titles: loadJSON('titles.json'),
+      concepts: loadJSON('concepts.json')
+    };
+};
 
 
 
 export {
-    getSampleData
+    getAllData
 }

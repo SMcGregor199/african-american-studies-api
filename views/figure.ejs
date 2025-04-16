@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+    <title><%=figure.name %> | Echo Lab</title>
+</head>
+<body>
+    <h1><%= figure.name %></h1>
+    <p><strong>Lifespan:</strong> <%= figure.lifespan %></p>
+    <p><strong>Bio:</strong> <%= figure.bio %></p>
+    <p><strong>Tags:</strong> <%= figure.tags.join(', ') %></p>
+  
+    <h2>Titles by <%= figure.name %></h2>
+    <ul>
+      <% titles.forEach(title => { %>
+        <li><strong><%= title.title %></strong> (<%= title.type %>, <%= title.year %>)</li>
+      <% }); %>
+    </ul>
+  
+    <h2>Key Concepts in Their Work</h2>
+    <ul>
+      <% concepts.forEach(concept => { %>
+        <li><%= concept.term %> — <%= concept.definition %></li>
+      <% }); %>
+    </ul>
+</body>
+<script>
+
+</script>
+</html>
+

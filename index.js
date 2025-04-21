@@ -1,7 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { getAllData, getFiguresByIds, getTitlesByFigureId,
-getTitlesByConceptId, getConceptsByIds, getFiguresByTitle } from './helper.js';
+getTitlesByConceptId, getConceptsByIds } from './helper.js';
+import {router} from './api/index.js';
 
 dotenv.config();
 
@@ -11,6 +12,8 @@ const PORT = process.env.PORT || 9000;
 const SERVER_TYPE = process.env.SERVER_TYPE || 'local';
 
 app.set('view engine', 'ejs');
+
+app.use('/api', router);
 
 app.get('/figures/:id',function(req,res){
     const figureId = req.params.id;

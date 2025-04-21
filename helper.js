@@ -46,5 +46,4 @@ export {
     getTitlesByFigureId,
     getTitlesByConceptId,
     getConceptsByIds,
-    getFiguresByTitle,
 }

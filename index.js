@@ -28,7 +28,13 @@ app.get('/figures/:id',function(req,res){
     const concepts = data.concepts.filter(function(c){
         return conceptIds.has(c.id);
     });
-    res.render("figure", { figure,titles,concepts }); 
+    
+    
+    if(req.query.format === 'json'){
+        return res.json({figure,titles,concepts});
+    } else {
+        res.render("figure", { figure,titles,concepts });
+    }
 });
 app.get('/concepts/:id', (req, res) => {
     const conceptId = req.params.id;
@@ -40,9 +46,33 @@ app.get('/concepts/:id', (req, res) => {
     const figureIds = new Set(titles.map(t => t.figureId));
     const figures = data.figures.filter(f => figureIds.has(f.id));
 
-    res.render('concept', { concept, titles, figures });
+    if(req.query.format === 'json'){
+        return res.json({concept,titles,figures});
+    } else {
+        res.render('concept', { concept, titles, figures });
+    }
 
 });
+app.get('/titles/:id', (req, res) => {
+    const titleId = req.params.id;
+    const title = data.titles.find(t => t.id === titleId);
+    if (!title) {
+      return res.status(404).send("Title not found");
+    }
+  
+    const figureIds = title.figureId; 
+    const figures = data.figures.filter(f => figureIds.includes(f.id));
+  
+    const conceptIds = title.concepts;
+    const concepts = data.concepts.filter(c => conceptIds.includes(c.id));
+  
+    if(req.query.format === 'json'){
+        return res.json({title,figures,concepts});
+    } else {
+        res.render("title", { title, figures, concepts });
+    }
+  });
+  
 
 app.get('/',function(req,res){
     const data = getAllData();

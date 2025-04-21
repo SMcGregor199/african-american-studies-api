@@ -11,7 +11,7 @@
     <h2>Appears In Titles</h2>
     <ul>
       <% titles.forEach(title => { %>
-        <li><strong><%= title.title %></strong> by <%= figures.find(f => f.id === title.figureId).name %></li>
+        <li><a href="/titles/<%=title.id%>"><%= title.title %></a> by <%= figures.find(f => f.id === title.figureId).name %></li>
       <% }); %>
     </ul>
   

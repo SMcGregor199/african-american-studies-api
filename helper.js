@@ -16,8 +16,35 @@ const getAllData = () => {
     };
 };
 
-
+function getFiguresByIds(ids, data) {
+    const matcher = Array.isArray(ids)
+    ? id => ids.includes(id)
+    : id => ids.has(id);
+    return data.figures.filter(f => matcher(f.id));
+}  
+function getTitlesByFigureId(figureId, data) {
+    return data.titles.filter(t => t.figureIds.includes(figureId));
+}
+function getTitlesByConceptId(conceptId, data) {
+    return data.titles.filter(t => t.concepts.includes(conceptId));
+}
+function getConceptsByIds(ids, data) {
+    // Handle both Set and Array input
+    const matcher = Array.isArray(ids)
+      ? id => ids.includes(id)
+      : id => ids.has(id);
+    return data.concepts.filter(c => matcher(c.id));
+}
+function getFiguresByTitle(title, data) {
+    return data.figures.filter(f => title.figureIds.includes(f.id));
+}
+        
 
 export {
-    getAllData
+    getAllData,
+    getFiguresByIds,
+    getTitlesByFigureId,
+    getTitlesByConceptId,
+    getConceptsByIds,
+    getFiguresByTitle,
 }

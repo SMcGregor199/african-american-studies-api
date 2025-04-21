@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import { getAllData } from './helper.js';
+import { getAllData, getFiguresByIds, getTitlesByFigureId,
+getTitlesByConceptId, getConceptsByIds, getFiguresByTitle } from './helper.js';
 
 dotenv.config();
 
@@ -13,22 +14,18 @@ app.set('view engine', 'ejs');
 
 app.get('/figures/:id',function(req,res){
     const figureId = req.params.id;
-    const figure = data.figures.find(function(f){ 
-        return f.id === figureId;
-    });
+    
+    const figure = data.figures.find(f => f.id === figureId);
+
     if(!figure){
         return res.status(404).send("figure not found");
     }
-    const titles = data.titles.filter(function(t){
-        return t.figureId === figureId;
-    });
-    const conceptIds = new Set(titles.flatMap(function(t){
-       return t.concepts;
-    }));
-    const concepts = data.concepts.filter(function(c){
-        return conceptIds.has(c.id);
-    });
+
+    const titles = getTitlesByFigureId(figureId,data);
     
+    const conceptIds = new Set(titles.flatMap(t => t.concepts));
+
+    const concepts = getConceptsByIds(conceptIds,data);
     
     if(req.query.format === 'json'){
         return res.json({figure,titles,concepts});
@@ -36,15 +33,22 @@ app.get('/figures/:id',function(req,res){
         res.render("figure", { figure,titles,concepts });
     }
 });
+
 app.get('/concepts/:id', (req, res) => {
     const conceptId = req.params.id;
+    
     const concept = data.concepts.find(c => c.id === conceptId);
+    
     if (!concept) {
         return res.status(404).send("Concept not found");
     }
-    const titles = data.titles.filter(t => t.concepts.includes(conceptId));
-    const figureIds = new Set(titles.map(t => t.figureId));
-    const figures = data.figures.filter(f => figureIds.has(f.id));
+
+    const titles = getTitlesByConceptId(conceptId,data);
+  
+    const figureIds = new Set(titles.flatMap(t => t.figureIds));
+  
+    const figures = getFiguresByIds(figureIds,data);
+   
 
     if(req.query.format === 'json'){
         return res.json({concept,titles,figures});
@@ -55,17 +59,20 @@ app.get('/concepts/:id', (req, res) => {
 });
 app.get('/titles/:id', (req, res) => {
     const titleId = req.params.id;
+    
     const title = data.titles.find(t => t.id === titleId);
+    
     if (!title) {
       return res.status(404).send("Title not found");
     }
-  
-    const figureIds = title.figureId; 
-    const figures = data.figures.filter(f => figureIds.includes(f.id));
+    
+    const figureIds = title.figureIds;
+    const figures = getFiguresByIds(figureIds,data);
   
     const conceptIds = title.concepts;
-    const concepts = data.concepts.filter(c => conceptIds.includes(c.id));
-  
+    const concepts = getConceptsByIds(conceptIds,data);
+    
+    
     if(req.query.format === 'json'){
         return res.json({title,figures,concepts});
     } else {

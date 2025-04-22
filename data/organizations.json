@@ -1,0 +1,12 @@
+[
+    {
+      "id": "naacp",
+      "name": "NAACP",
+      "founded": "1909",
+      "description": "The National Association for the Advancement of Colored People, a civil rights organization formed to fight racial injustice through legal and legislative means.",
+      "figureIds": ["web-dubois", "thurgood-marshall"],
+      "concepts": ["civil-rights", "legality", "racial-justice"],
+      "titles": ["brown-v-board"],
+      "movements": ["civil-rights"]
+    }
+]

@@ -79,13 +79,12 @@ Each object type in Echo Lab uses a shared relational schema:
 
 ```json
 {
-  "id": "invisibility",
-  "name": "Invisibility",
-  "description": "The condition of being unseen or misrecognized in society...",
-  "figureIds": ["ralph-ellison"],
-  "titleIds": ["invisible-man"],
-  "movementIds": ["harlem-renaissance"],
-  "organizationIds": ["naacp"]
+    "id": "racial-uplift",
+    "term": "Racial Uplift",
+    "definition": "A 19th-century movement advocating for the moral, educational, and social advancement of African Americans as a collective strategy for progress.",
+    "category": "political",
+    "titles": ["iola-leroy"],
+    "figures": ["frances-harper", "w-e-b-du-bois"]
 }
 ```
 

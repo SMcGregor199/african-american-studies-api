@@ -23,7 +23,7 @@ function getFiguresByIds(ids, data) {
     return data.figures.filter(f => matcher(f.id));
 }  
 function getTitlesByFigureId(figureId, data) {
-    return data.titles.filter(t => t.figureIds.includes(figureId));
+    return data.titles.filter(t => t.figures.includes(figureId));
 }
 function getTitlesByConceptId(conceptId, data) {
     return data.titles.filter(t => t.concepts.includes(conceptId));

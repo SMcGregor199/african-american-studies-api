@@ -48,7 +48,7 @@ app.get('/concepts/:id', (req, res) => {
 
     const titles = getTitlesByConceptId(conceptId,data);
   
-    const figureIds = new Set(titles.flatMap(t => t.figureIds));
+    const figureIds = new Set(titles.flatMap(t => t.figures));
   
     const figures = getFiguresByIds(figureIds,data);
    
@@ -69,7 +69,7 @@ app.get('/titles/:id', (req, res) => {
       return res.status(404).send("Title not found");
     }
     
-    const figureIds = title.figureIds;
+    const figureIds = title.figures;
     const figures = getFiguresByIds(figureIds,data);
   
     const conceptIds = title.concepts;

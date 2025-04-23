@@ -5,7 +5,7 @@
       "type": "novel",
       "year": 1892,
       "excerpt": "It was a bright spring morning when Iola Leroy looked from the car window and watched the ever-changing landscape...",
-      "figureIds": ["frances-harper"],
+      "figures": ["frances-harper"],
       "concepts": ["racial-uplift", "reconstruction", "passing"]
     },
     {
@@ -14,7 +14,7 @@
       "type": "poem",
       "year": 1858,
       "excerpt": "Make me a grave where’er you will, / In a lowly plain or a lofty hill...",
-      "figureIds": ["frances-harper"],
+      "figures": ["frances-harper"],
       "concepts": ["freedom", "abolition", "mourning"]
     }
   ]

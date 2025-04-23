@@ -6,5 +6,31 @@
       "bio": "Frances Ellen Watkins Harper was a poet, orator, abolitionist, and one of the first African American women to be published in the United States. She was active in the anti-slavery movement and an advocate for women's rights.",
       "tags": ["poet", "abolitionist", "educator", "feminist"],
       "titles": ["iola-leroy", "bury-me-in-a-free-land"]
+    },
+    {
+      "id": "langston-hughes",
+      "name": "Langston Hughes",
+      "lifespan": "1902–1967",
+      "bio": "Langston Hughes was a poet, playwright, novelist, and central figure of the Harlem Renaissance. Known for his jazz-influenced verse and commitment to portraying Black life in America, his work blended cultural pride with political urgency.",
+      "tags": ["poet", "playwright", "harlem-renaissance", "essayist"],
+      "titles": ["the-negro-speaks-of-rivers", "montage-of-a-dream-deferred"]
+    },
+    {
+      "id": "zora-neale-hurston",
+      "name": "Zora Neale Hurston",
+      "lifespan": "1891–1960",
+      "bio": "Zora Neale Hurston was an anthropologist, novelist, and folklorist whose work captured the richness of Black southern life. Her writing is known for its use of dialect and deep attention to oral tradition, especially in her landmark novel *Their Eyes Were Watching God*.",
+      "tags": ["novelist", "anthropologist", "folklorist", "harlem-renaissance"],
+      "titles": ["their-eyes-were-watching-god", "mules-and-men"]
+    },
+    {
+      "id": "alain-locke",
+      "name": "Alain Locke",
+      "lifespan": "1885–1954",
+      "bio": "Alain Locke was a philosopher, critic, and educator often called the 'Father of the Harlem Renaissance.' He edited *The New Negro* anthology and championed the role of Black art in reshaping American culture and intellectual life.",
+      "tags": ["philosopher", "educator", "critic", "harlem-renaissance"],
+      "titles": ["the-new-negro"]
     }
+    
+    
   ]

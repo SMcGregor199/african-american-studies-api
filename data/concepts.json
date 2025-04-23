@@ -14,5 +14,30 @@
       "category": "philosophical",
       "titles": ["bury-me-in-a-free-land"],
       "figures": ["frances-harper", "frederick-douglass"]
+    },
+    {
+      "id": "modernism",
+      "term": "Modernism",
+      "definition": "A literary and artistic movement characterized by experimental form and a break from tradition, often used by Black writers to express fragmentation, dislocation, and new modes of subjectivity in the 20th century.",
+      "category": "aesthetic",
+      "titles": ["the-new-negro", "montage-of-a-dream-deferred"],
+      "figures": ["alain-locke", "langston-hughes"]
+    },
+    {
+      "id": "identity",
+      "term": "Identity",
+      "definition": "A recurring concern in African American literature and thought, encompassing personal, cultural, and political dimensions of selfhood shaped by race, history, and community.",
+      "category": "philosophical",
+      "titles": ["their-eyes-were-watching-god", "invisible-man"],
+      "figures": ["zora-neale-hurston", "ralph-ellison"]
+    },
+    {
+      "id": "racial-pride",
+      "term": "Racial Pride",
+      "definition": "An affirmation of Black cultural heritage, beauty, and resilience, often articulated in response to systemic racism and cultural erasure.",
+      "category": "political",
+      "titles": ["the-new-negro", "the-negro-speaks-of-rivers"],
+      "figures": ["langston-hughes", "alain-locke"]
     }
+    
   ]

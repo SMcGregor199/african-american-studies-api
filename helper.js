@@ -12,7 +12,9 @@ const getAllData = () => {
     return {
       figures: loadJSON('figures.json'),
       titles: loadJSON('titles.json'),
-      concepts: loadJSON('concepts.json')
+      concepts: loadJSON('concepts.json'),
+      movements: loadJSON('movements.json'),
+      organizations: loadJSON('organizations.json')
     };
 };
 
@@ -29,15 +31,18 @@ function getTitlesByConceptId(conceptId, data) {
     return data.titles.filter(t => t.concepts.includes(conceptId));
 }
 function getConceptsByIds(ids, data) {
-    // Handle both Set and Array input
     const matcher = Array.isArray(ids)
       ? id => ids.includes(id)
       : id => ids.has(id);
     return data.concepts.filter(c => matcher(c.id));
 }
-function getFiguresByTitle(title, data) {
-    return data.figures.filter(f => title.figureIds.includes(f.id));
+function getTitlesByTitleIds(ids,data){
+    const matcher = Array.isArray(ids)
+      ? id => ids.includes(id)
+      : id => ids.has(id);
+    return data.titles.filter(c => matcher(c.id));
 }
+
         
 
 export {
@@ -46,4 +51,5 @@ export {
     getTitlesByFigureId,
     getTitlesByConceptId,
     getConceptsByIds,
+    getTitlesByTitleIds
 }

@@ -28,6 +28,12 @@
     <% }); %>
     </ul>
     
+    <h2>Movements</h2>
+    <ul>
+    <% data.movements.forEach(movement => { %>
+        <li><a href="/movements/<%=movement.id %>"><%= movement.name %></a> - <%= movement.description %></li>
+    <% }); %>
+    </ul>
 
 </body>
 

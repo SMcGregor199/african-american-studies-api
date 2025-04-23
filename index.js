@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { getAllData, getFiguresByIds, getTitlesByFigureId,
-getTitlesByConceptId, getConceptsByIds } from './helper.js';
+getTitlesByConceptId, getConceptsByIds, getTitlesByTitleIds } from './helper.js';
 import {router} from './api/index.js';
 
 dotenv.config();
@@ -81,6 +81,21 @@ app.get('/titles/:id', (req, res) => {
     } else {
         res.render("title", { title, figures, concepts });
     }
+  });
+  app.get("/movements/:id", (req, res) => {
+    const movement = data.movements.find(m => m.id === req.params.id);
+    
+    if (!movement) return res.status(404).send("Movement not found");
+  
+    const figureIds = movement.figures;
+    const titleIds = movement.titles;
+    const conceptIds = movement.concepts;
+
+    const figures = getFiguresByIds(figureIds,data);
+    const titles = getTitlesByTitleIds(titleIds, data);
+    const concepts = getConceptsByIds(conceptIds,data);
+
+    res.render("movement", { movement, figures, titles, concepts });
   });
   
 

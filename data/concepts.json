@@ -46,6 +46,32 @@
       "category": "cultural",
       "titles": ["the-new-negro"],
       "figures": ["alain-locke", "langston-hughes", "zora-neale-hurston"]
+    },
+    {
+      "id": "civil-rights",
+      "term": "Civil Rights",
+      "definition": "The fight for equal protection and participation under the law, especially focused on dismantling segregation, securing voting rights, and ending systemic discrimination against African Americans in the 20th century.",
+      "category": "political",
+      "titles": ["brown-v-board"],
+      "figures": ["thurgood-marshall", "w-e-b-dubois"]
+    },
+    {
+      "id": "legality",
+      "term": "Legality",
+      "definition": "The use of courts, constitutional law, and judicial advocacy to challenge racial inequality and affirm the rights of Black citizens within a democratic legal system.",
+      "category": "legal",
+      "titles": ["brown-v-board"],
+      "figures": ["thurgood-marshall"]
+    },
+    {
+      "id": "racial-justice",
+      "term": "Racial Justice",
+      "definition": "A vision and practice of systemic change that seeks not only to address racial inequality but to repair the long-standing harms of white supremacy through social, legal, and institutional transformation.",
+      "category": "philosophical",
+      "titles": ["the-souls-of-black-folk", "brown-v-board"],
+      "figures": ["w-e-b-dubois", "thurgood-marshall"]
     }
+    
+  
     
   ]

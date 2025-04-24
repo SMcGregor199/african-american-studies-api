@@ -30,7 +30,27 @@
       "bio": "Alain Locke was a philosopher, critic, and educator often called the 'Father of the Harlem Renaissance.' He edited *The New Negro* anthology and championed the role of Black art in reshaping American culture and intellectual life.",
       "tags": ["philosopher", "educator", "critic", "harlem-renaissance"],
       "titles": ["the-new-negro"]
+    },
+    {
+      "id": "w-e-b-dubois",
+      "name": "W.E.B. Du Bois",
+      "lifespan": "1868–1963",
+      "bio": "W.E.B. Du Bois was a sociologist, historian, writer, and civil rights activist. He was a co-founder of the NAACP, a pioneering voice in African American scholarship, and the author of influential works including 'The Souls of Black Folk'.",
+      "tags": ["sociologist", "activist", "historian", "educator"],
+      "titles": ["the-souls-of-black-folk"]
+    },
+    {
+      "id": "thurgood-marshall",
+      "name": "Thurgood Marshall",
+      "lifespan": "1908–1993",
+      "bio": "Thurgood Marshall was a civil rights lawyer and the first African American justice appointed to the U.S. Supreme Court. As lead counsel for the NAACP, he successfully argued *Brown v. Board of Education*, reshaping the landscape of American public education.",
+      "tags": ["lawyer", "supreme-court-justice", "civil-rights-advocate"],
+      "titles": ["brown-v-board"]
     }
+    
+
+    
+
     
     
   ]

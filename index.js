@@ -82,22 +82,38 @@ app.get('/titles/:id', (req, res) => {
         res.render("title", { title, figures, concepts });
     }
   });
-  app.get("/movements/:id", (req, res) => {
-    const movement = data.movements.find(m => m.id === req.params.id);
+app.get("/movements/:id", (req, res) => {
+const movement = data.movements.find(m => m.id === req.params.id);
+
+if (!movement) return res.status(404).send("Movement not found");
+
+const figureIds = movement.figures;
+const titleIds = movement.titles;
+const conceptIds = movement.concepts;
+
+const figures = getFiguresByIds(figureIds,data);
+const titles = getTitlesByTitleIds(titleIds, data);
+const concepts = getConceptsByIds(conceptIds,data);
+
+res.render("movement", { movement, figures, titles, concepts });
+});
+app.get('/organizations/:id', function (req, res) {
+    const organization = data.organizations.find(o => o.id === req.params.id);
+
+    if (!organization) return res.status(404).send("Organization not found");
     
-    if (!movement) return res.status(404).send("Movement not found");
-  
-    const figureIds = movement.figures;
-    const titleIds = movement.titles;
-    const conceptIds = movement.concepts;
+    const figureIds = organization.figures;
+    const titleIds = organization.titles;
+    const conceptIds = organization.concepts;
 
     const figures = getFiguresByIds(figureIds,data);
     const titles = getTitlesByTitleIds(titleIds, data);
     const concepts = getConceptsByIds(conceptIds,data);
 
-    res.render("movement", { movement, figures, titles, concepts });
-  });
-  
+    
+    res.render('organization', { organization, figures, titles, concepts });
+});
+
 
 app.get('/',function(req,res){
     const data = getAllData();

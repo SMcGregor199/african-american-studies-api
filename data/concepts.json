@@ -38,6 +38,14 @@
       "category": "political",
       "titles": ["the-new-negro", "the-negro-speaks-of-rivers"],
       "figures": ["langston-hughes", "alain-locke"]
+    },
+    {
+      "id": "harlem-renaissance",
+      "term": "Harlem Renaissance",
+      "definition": "A cultural and intellectual awakening in early 20th-century Black America, the Harlem Renaissance is understood not only as a historical movement but also as a lasting concept of Black modernism, creative autonomy, and aesthetic assertion across literature, music, art, and philosophy.",
+      "category": "cultural",
+      "titles": ["the-new-negro"],
+      "figures": ["alain-locke", "langston-hughes", "zora-neale-hurston"]
     }
     
   ]

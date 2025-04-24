@@ -16,5 +16,14 @@
       "excerpt": "Make me a grave where’er you will, / In a lowly plain or a lofty hill...",
       "figures": ["frances-harper"],
       "concepts": ["freedom", "abolition", "mourning"]
+    },
+    {
+      "id": "the-new-negro",
+      "title": "The New Negro: An Interpretation",
+      "type": "essay anthology",
+      "year": 1925,
+      "excerpt": "Harlem has become in a way a spiritual capital of Negro life. In Harlem, Negro life is seizing upon its first chances for group expression and self-determination...",
+      "figures": ["alain-locke"],
+      "concepts": ["harlem-renaissance", "black-modernism", "cultural-expression"]
     }
   ]

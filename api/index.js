@@ -1,6 +1,6 @@
 import express from 'express';
 import { getAllData, getFiguresByIds, getTitlesByFigureId,
-getTitlesByConceptId, getConceptsByIds } from '../helper.js';
+getTitlesByConceptId, getConceptsByIds, getTitlesByTitleIds } from '../helper.js';
 
 
 const router = express.Router();
@@ -51,16 +51,23 @@ router.get('/titles', (req, res) => {
     res.json(data.titles);
 });
 router.get('/movements/:id', (req, res) => {
-    const figureId = req.params.id;
-    const figure = data.figures.find(f => f.id === figureId);
+    const movementId = req.params.id;
+    const movement = data.movements.find(m => m.id === movementId);
   
-    if (!figure) return res.status(404).json({ error: 'Figure not found' });
+    if (!movement) return res.status(404).json({ error: 'movement not found' });
   
-    const titles = getTitlesByFigureId(figureId, data);
-    const conceptIds = new Set(titles.flatMap(t => t.concepts));
-    const concepts = getConceptsByIds(conceptIds, data);
+    const figureIds = movement.figures;
+    const titleIds = movement.titles;
+    const conceptIds = movement.concepts;
+
+    const figures = getFiguresByIds(figureIds,data);
+    const titles = getTitlesByTitleIds(titleIds, data);
+    const concepts = getConceptsByIds(conceptIds,data);
   
-    res.json({ figure, titles, concepts });
+    res.json({ figures, titles, concepts });
+});
+router.get('/movements', (req, res) => {
+    res.json(data.movements);
 });
 export {
     router

@@ -15,8 +15,32 @@ router.get('/figures/:id', (req, res) => {
     const titles = getTitlesByFigureId(figureId, data);
     const conceptIds = new Set(titles.flatMap(t => t.concepts));
     const concepts = getConceptsByIds(conceptIds, data);
-  
-    res.json({ figure, titles, concepts });
+
+    const organizations = data.organizations.filter(org => org.figures.includes(figureId));
+    const movements = data.movements.filter(mov => mov.figures.includes(figureId));
+    const availableData = {
+        titles,
+        concepts,
+        organizations,
+        movements
+    };
+    const filter = req.query.filter;
+
+    if(filter){
+        const allowedFilters = Object.keys(availableData);
+
+        if(!allowedFilters.includes(filter)){
+            return res.status(400).json({ error: 'Invalid filter type. Must be one of: titles, concepts, organizations, movements' });
+        }
+
+        const filterData = {
+            figure,
+            [filter]: availableData[filter] 
+        };
+        return res.json(filteredData);
+    }
+    
+    res.json({ figure, titles, concepts, organizations, movements });
 });
 router.get('/figures', (req, res) => {
     let figures = data.figures;

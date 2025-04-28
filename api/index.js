@@ -19,7 +19,16 @@ router.get('/figures/:id', (req, res) => {
     res.json({ figure, titles, concepts });
 });
 router.get('/figures', (req, res) => {
-    res.json(data.figures);
+    let figures = data.figures;
+    if(req.query.tag){
+        figures = figures.filter(figure => figure.tags.includes(req.query.tag));
+    }
+    if(req.query.name){
+        const search = req.query.name.toLowerCase();
+        figures = figures.filter(figure => figure.name.toLowerCase().includes(search));
+    }
+
+    res.json(figures);
 });
 router.get('/concepts/:id', (req, res) => {
     const conceptId = req.params.id;

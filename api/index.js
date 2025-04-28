@@ -37,7 +37,7 @@ router.get('/figures/:id', (req, res) => {
             figure,
             [filter]: availableData[filter] 
         };
-        return res.json(filteredData);
+        return res.json(filterData);
     }
     
     res.json({ figure, titles, concepts, organizations, movements });

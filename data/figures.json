@@ -45,7 +45,23 @@
       "lifespan": "1908–1993",
       "bio": "Thurgood Marshall was a civil rights lawyer and the first African American justice appointed to the U.S. Supreme Court. As lead counsel for the NAACP, he successfully argued *Brown v. Board of Education*, reshaping the landscape of American public education.",
       "tags": ["lawyer", "supreme-court-justice", "civil-rights-advocate"],
-      "titles": ["brown-v-board"]
+      "titles": ["the-basis-of-the-supreme-courts-decision-against-segregation"]
+    },
+    {
+      "id": "frederick-douglass",
+      "name": "Frederick Douglass",
+      "lifespan": "1818–1895",
+      "bio": "Frederick Douglass was a former enslaved African American who became a leading abolitionist, orator, writer, and statesman. His autobiographies and speeches fueled the movement to end slavery and expand civil rights.",
+      "tags": ["abolitionist", "orator", "writer", "activist"],
+      "titles": []
+    },
+    {
+      "id": "ralph-ellison",
+      "name": "Ralph Ellison",
+      "lifespan": "1913–1994",
+      "bio": "Ralph Ellison was a novelist, literary critic, and scholar best known for his novel *Invisible Man*, which explores complex questions of race, identity, and individuality in America. His work continues to influence African American literature and thought.",
+      "tags": ["novelist", "essayist", "critic"],
+      "titles": ["invisible-man"]
     }
     
 

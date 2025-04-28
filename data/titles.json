@@ -25,5 +25,77 @@
       "excerpt": "Harlem has become in a way a spiritual capital of Negro life. In Harlem, Negro life is seizing upon its first chances for group expression and self-determination...",
       "figures": ["alain-locke"],
       "concepts": ["harlem-renaissance", "black-modernism", "cultural-expression"]
+    },
+    {
+      "id": "mules-and-men",
+      "title": "Mules and Men",
+      "type": "folklore collection",
+      "year": 1935,
+      "excerpt": "I was glad when somebody told me, 'You may go and collect Negro folklore.'",
+      "figures": ["zora-neale-hurston"],
+      "concepts": ["cultural-expression"]
+    },
+    {
+      "id": "basis-of-supreme-court-decision",
+      "title": "The Basis of the Supreme Court's Decision Against Segregation",
+      "type": "essay",
+      "year": 1955,
+      "excerpt": "The Court concluded that in the field of public education, the doctrine of 'separate but equal' has no place...",
+      "figures": ["thurgood-marshall"],
+      "concepts": ["civil-rights", "legality", "racial-justice"]
+    },
+    {
+      "id": "the-crisis",
+      "title": "The Crisis",
+      "type": "magazine",
+      "year": 1910,
+      "excerpt": "The Crisis, edited initially by W.E.B. Du Bois, served as the official magazine of the NAACP, advocating for civil rights, political equality, and cultural expression.",
+      "figures": ["w-e-b-dubois"],
+      "concepts": ["civil-rights", "cultural-expression", "racial-justice"]
+    },
+    {
+      "id": "the-souls-of-black-folk",
+      "title": "The Souls of Black Folk",
+      "type": "essay collection",
+      "year": 1903,
+      "excerpt": "One ever feels his two-ness,—an American, a Negro; two souls, two thoughts, two unreconciled strivings...",
+      "figures": ["w-e-b-dubois"],
+      "concepts": ["racial-justice", "identity"]
+    },
+    {
+      "id": "montage-of-a-dream-deferred",
+      "title": "Montage of a Dream Deferred",
+      "type": "poetry collection",
+      "year": 1951,
+      "excerpt": "What happens to a dream deferred? Does it dry up like a raisin in the sun?",
+      "figures": ["langston-hughes"],
+      "concepts": ["modernism", "racial-pride"]
+    },
+    {
+      "id": "the-negro-speaks-of-rivers",
+      "title": "The Negro Speaks of Rivers",
+      "type": "poem",
+      "year": 1921,
+      "excerpt": "I've known rivers ancient as the world and older than the flow of human blood in human veins...",
+      "figures": ["langston-hughes"],
+      "concepts": ["racial-pride"]
+    },
+    {
+      "id": "their-eyes-were-watching-god",
+      "title": "Their Eyes Were Watching God",
+      "type": "novel",
+      "year": 1937,
+      "excerpt": "Ships at a distance have every man's wish on board.",
+      "figures": ["zora-neale-hurston"],
+      "concepts": ["identity"]
+    },
+    {
+      "id": "invisible-man",
+      "title": "Invisible Man",
+      "type": "novel",
+      "year": 1952,
+      "excerpt": "I am invisible, understand, simply because people refuse to see me.",
+      "figures": ["ralph-ellison"],
+      "concepts": ["identity"]
     }
   ]

@@ -70,6 +70,54 @@
       "category": "philosophical",
       "titles": ["the-souls-of-black-folk", "brown-v-board"],
       "figures": ["w-e-b-dubois", "thurgood-marshall"]
+    },
+    {
+      "id": "reconstruction",
+      "term": "Reconstruction",
+      "definition": "The post-Civil War era (1865–1877) during which efforts were made to reintegrate Southern states into the Union and redefine African American citizenship and rights.",
+      "category": "historical",
+      "titles": ["iola-leroy"],
+      "figures": ["frances-harper"]
+    },
+    {
+      "id": "passing",
+      "term": "Passing",
+      "definition": "The practice where African Americans with lighter skin tones presented themselves as white to escape racial discrimination, a complex and painful phenomenon explored in African American literature.",
+      "category": "social",
+      "titles": ["iola-leroy"],
+      "figures": ["frances-harper"]
+    },
+    {
+      "id": "abolition",
+      "term": "Abolition",
+      "definition": "The movement to end slavery and emancipate enslaved African Americans, culminating in the 19th-century constitutional amendments and legislation following the Civil War.",
+      "category": "political",
+      "titles": ["bury-me-in-a-free-land"],
+      "figures": ["frances-harper"]
+    },
+    {
+      "id": "mourning",
+      "term": "Mourning",
+      "definition": "A deep, collective response to loss and injustice, mourning appears throughout African American literature as both grief and a call to action against oppression.",
+      "category": "emotional",
+      "titles": ["bury-me-in-a-free-land"],
+      "figures": ["frances-harper"]
+    },
+    {
+      "id": "black-modernism",
+      "term": "Black Modernism",
+      "definition": "An artistic and intellectual movement where Black writers and artists redefined modernist aesthetics to express the Black experience in a world shaped by colonialism, migration, and racial injustice.",
+      "category": "aesthetic",
+      "titles": ["the-new-negro"],
+      "figures": ["alain-locke"]
+    },
+    {
+      "id": "cultural-expression",
+      "term": "Cultural Expression",
+      "definition": "The articulation of Black identity, heritage, and aspirations through literature, music, visual arts, and performance, often as acts of resistance and affirmation.",
+      "category": "cultural",
+      "titles": ["the-new-negro"],
+      "figures": ["alain-locke"]
     }
     
   

@@ -7,5 +7,14 @@
       "figures": ["langston-hughes", "zora-neale-hurston", "alain-locke"],
       "titles": ["the-new-negro"],
       "concepts": ["modernism", "identity", "racial-pride"]
+    },
+    {
+      "id": "civil-rights",
+      "name": "Civil Rights Movement",
+      "period": "1950s–1960s",
+      "description": "A mass movement to secure legal recognition and federal protection of the citizenship rights enumerated in the Constitution and federal law, particularly focused on dismantling segregation and discrimination against African Americans.",
+      "figures": ["thurgood-marshall", "w-e-b-dubois"],
+      "titles": [],
+      "concepts": ["civil-rights", "racial-justice", "legality"]
     }
 ]

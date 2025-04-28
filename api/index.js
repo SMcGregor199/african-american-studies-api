@@ -28,7 +28,7 @@ router.get('/concepts/:id', (req, res) => {
     if (!concept) return res.status(404).json({ error: 'Concept not found' });
   
     const titles = getTitlesByConceptId(conceptId, data);
-    const figureIds = new Set(titles.flatMap(t => t.figureIds));
+    const figureIds = new Set(titles.flatMap(t => t.figures));
     const figures = getFiguresByIds(figureIds, data);
   
     res.json({ concept, titles, figures });
@@ -42,7 +42,7 @@ router.get('/titles/:id', (req, res) => {
   
     if (!title) return res.status(404).json({ error: 'Title not found' });
   
-    const figures = getFiguresByIds(title.figureIds, data);
+    const figures = getFiguresByIds(title.figures, data);
     const concepts = getConceptsByIds(title.concepts, data);
   
     res.json({ title, figures, concepts });

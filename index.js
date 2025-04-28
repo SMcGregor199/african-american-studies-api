@@ -141,8 +141,9 @@ app.get('/',function(req,res){
 app.use((req, res) => {
     if (req.originalUrl.startsWith('/api')) {
         res.status(404).json({ error: 'API endpoint not found' });
-    } 
-    res.status(404).render('404');
+    } else {
+        res.status(404).render('404');
+    }
 });
 
 

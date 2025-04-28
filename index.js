@@ -8,6 +8,7 @@ import {router} from './api/index.js';
 dotenv.config();
 
 const app = express();
+app.set('json spaces', 2);
 const data = getAllData(); 
 const PORT = process.env.PORT || 9000;
 const SERVER_TYPE = process.env.SERVER_TYPE || 'local';

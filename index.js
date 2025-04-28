@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { getAllData, getFiguresByIds, getTitlesByFigureId,
 getTitlesByConceptId, getConceptsByIds, getTitlesByTitleIds } from './helper.js';
 import {router} from './api/index.js';
@@ -14,6 +15,19 @@ const SERVER_TYPE = process.env.SERVER_TYPE || 'local';
 app.set('view engine', 'ejs');
 
 app.use('/api', router);
+app.get('/api', (req, res) => {
+    res.json({
+      message: "Welcome to the African American Studies API",
+      available_endpoints: [
+        "/api/figures",
+        "/api/concepts",
+        "/api/titles",
+        "/api/movements",
+        "/api/organizations"
+      ]
+    });
+  });
+app.use(cors());
 
 app.get('/figures/:id',function(req,res){
     const figureId = req.params.id;
@@ -125,7 +139,10 @@ app.get('/',function(req,res){
 
 
 app.use((req, res) => {
-    res.status(404).send('Page not found');
+    if (req.originalUrl.startsWith('/api')) {
+        res.status(404).json({ error: 'API endpoint not found' });
+    } 
+    res.status(404).render('404');
 });
 
 

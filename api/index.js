@@ -51,6 +51,25 @@ router.get('/figures', (req, res) => {
         const search = req.query.name.toLowerCase();
         figures = figures.filter(figure => figure.name.toLowerCase().includes(search));
     }
+    if(req.query.concept){
+        const concept = data.concepts.find(c => c.id === req.query.concept);
+        if (!concept) return res.status(404).json({ error: 'Concept not found' });
+        
+        figures = figures.filter(f => concept.figures.includes(f.id));
+        
+    }
+    if(req.query.movement){
+        const movement = data.movements.find(m => m.id === req.query.movement);
+        if (!movement) return res.status(404).json({ error: 'Movement not found' });
+
+        figures = figures.filter(f => movement.figures.includes(f.id));
+    }
+    if(req.query.organization){
+        const org = data.organizations.find(o => o.id === req.query.organization);
+        if (!org) return res.status(404).json({ error: 'Organization not found' });
+
+        figures = figures.filter(f => org.figures.includes(f.id));
+    }
 
     res.json(figures);
 });

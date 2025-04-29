@@ -70,6 +70,16 @@ router.get('/figures', (req, res) => {
 
         figures = figures.filter(f => org.figures.includes(f.id));
     }
+    const limit = parseInt(req.query.limit);
+    const offset = parseInt(req.query.offset);
+    
+    if (!isNaN(limit) && !isNaN(offset)) {
+        figures = figures.slice(offset, offset + limit);
+    } else if (!isNaN(limit)) {
+        figures = figures.slice(0, limit);
+    } else if (!isNaN(offset)) {
+        figures = figures.slice(offset);
+    }
 
     res.json(figures);
 });

@@ -79,7 +79,7 @@ router.get('/figures', (req, res) => {
         figures = figures.slice(0, limit);
     } else if (!isNaN(offset)) {
         figures = figures.slice(offset);
-    } .. 
+    } 
 
     res.json(figures);
 });

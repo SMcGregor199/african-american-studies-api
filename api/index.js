@@ -5,7 +5,11 @@ getTitlesByConceptId, getConceptsByIds, getTitlesByTitleIds } from '../helper.js
 
 const router = express.Router();
 const data = getAllData(); 
-
+router.get('/figures/random', (req, res) => {
+    const figures = data.figures;
+    const randomIndex = Math.floor(Math.random() * figures.length);
+    res.json(figures[randomIndex]);
+});
 router.get('/figures/:id', (req, res) => {
     const figureId = req.params.id;
     const figure = data.figures.find(f => f.id === figureId);
@@ -70,6 +74,19 @@ router.get('/figures', (req, res) => {
 
         figures = figures.filter(f => org.figures.includes(f.id));
     }
+
+    if (req.query.sort === 'name') {
+        figures.sort((a, b) => a.lastName.localeCompare(b.lastName));
+    }
+    if (req.query.sort === 'lifespan') {
+        figures.sort((a, b) => {
+            // Extract starting years from lifespan like "1913–1994"
+            const getStartYear = s => parseInt(s.split('–')[0]);
+            return getStartYear(a.lifespan) - getStartYear(b.lifespan);
+        });
+    }
+
+
     const limit = parseInt(req.query.limit);
     const offset = parseInt(req.query.offset);
 
@@ -83,6 +100,12 @@ router.get('/figures', (req, res) => {
 
     res.json(figures);
 });
+router.get('/figures/random', (req, res) => {
+    const figures = data.figures;
+    const randomIndex = Math.floor(Math.random() * figures.length);
+    res.json(figures[randomIndex]);
+});
+
 router.get('/concepts/:id', (req, res) => {
     const conceptId = req.params.id;
     const concept = data.concepts.find(c => c.id === conceptId);

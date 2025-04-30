@@ -2,6 +2,7 @@
     {
       "id": "frances-harper",
       "name": "Frances Ellen Watkins Harper",
+      "lastName": "Harper",
       "lifespan": "1825–1911",
       "bio": "Frances Ellen Watkins Harper was a poet, orator, abolitionist, and one of the first African American women to be published in the United States. She was active in the anti-slavery movement and an advocate for women's rights.",
       "tags": ["poet", "abolitionist", "educator", "feminist"],
@@ -10,6 +11,7 @@
     {
       "id": "langston-hughes",
       "name": "Langston Hughes",
+      "lastName":"Hughes",
       "lifespan": "1902–1967",
       "bio": "Langston Hughes was a poet, playwright, novelist, and central figure of the Harlem Renaissance. Known for his jazz-influenced verse and commitment to portraying Black life in America, his work blended cultural pride with political urgency.",
       "tags": ["poet", "playwright", "harlem-renaissance", "essayist"],
@@ -18,6 +20,7 @@
     {
       "id": "zora-neale-hurston",
       "name": "Zora Neale Hurston",
+      "lastName":"Hurston",
       "lifespan": "1891–1960",
       "bio": "Zora Neale Hurston was an anthropologist, novelist, and folklorist whose work captured the richness of Black southern life. Her writing is known for its use of dialect and deep attention to oral tradition, especially in her landmark novel *Their Eyes Were Watching God*.",
       "tags": ["novelist", "anthropologist", "folklorist", "harlem-renaissance"],
@@ -26,6 +29,7 @@
     {
       "id": "alain-locke",
       "name": "Alain Locke",
+      "lastName":"Locke",
       "lifespan": "1885–1954",
       "bio": "Alain Locke was a philosopher, critic, and educator often called the 'Father of the Harlem Renaissance.' He edited *The New Negro* anthology and championed the role of Black art in reshaping American culture and intellectual life.",
       "tags": ["philosopher", "educator", "critic", "harlem-renaissance"],
@@ -34,6 +38,7 @@
     {
       "id": "w-e-b-dubois",
       "name": "W.E.B. Du Bois",
+      "lastName":"Du Bois",
       "lifespan": "1868–1963",
       "bio": "W.E.B. Du Bois was a sociologist, historian, writer, and civil rights activist. He was a co-founder of the NAACP, a pioneering voice in African American scholarship, and the author of influential works including 'The Souls of Black Folk'.",
       "tags": ["sociologist", "activist", "historian", "educator"],
@@ -42,6 +47,7 @@
     {
       "id": "thurgood-marshall",
       "name": "Thurgood Marshall",
+      "lastName":"Marshall",
       "lifespan": "1908–1993",
       "bio": "Thurgood Marshall was a civil rights lawyer and the first African American justice appointed to the U.S. Supreme Court. As lead counsel for the NAACP, he successfully argued *Brown v. Board of Education*, reshaping the landscape of American public education.",
       "tags": ["lawyer", "supreme-court-justice", "civil-rights-advocate"],
@@ -50,6 +56,7 @@
     {
       "id": "frederick-douglass",
       "name": "Frederick Douglass",
+      "lastName":"Douglass",
       "lifespan": "1818–1895",
       "bio": "Frederick Douglass was a former enslaved African American who became a leading abolitionist, orator, writer, and statesman. His autobiographies and speeches fueled the movement to end slavery and expand civil rights.",
       "tags": ["abolitionist", "orator", "writer", "activist"],
@@ -58,6 +65,7 @@
     {
       "id": "ralph-ellison",
       "name": "Ralph Ellison",
+      "lastName":"Ellison",
       "lifespan": "1913–1994",
       "bio": "Ralph Ellison was a novelist, literary critic, and scholar best known for his novel *Invisible Man*, which explores complex questions of race, identity, and individuality in America. His work continues to influence African American literature and thought.",
       "tags": ["novelist", "essayist", "critic"],

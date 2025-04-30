@@ -75,16 +75,18 @@ router.get('/figures', (req, res) => {
         figures = figures.filter(f => org.figures.includes(f.id));
     }
 
-    if (req.query.sort === 'name') {
+    if (req.query.sort === 'lastname') {
         figures.sort((a, b) => a.lastName.localeCompare(b.lastName));
     }
-    if (req.query.sort === 'lifespan') {
-        figures.sort((a, b) => {
-            // Extract starting years from lifespan like "1913–1994"
-            const getStartYear = s => parseInt(s.split('–')[0]);
-            return getStartYear(a.lifespan) - getStartYear(b.lifespan);
-        });
+    if (req.query.sort === 'lifespan-asc') {
+        const getStartYear = s => parseInt(s.split('–')[0]);
+        figures.sort((a, b) => getStartYear(a.lifespan) - getStartYear(b.lifespan));
     }
+    if (req.query.sort === 'lifespan-desc') {
+        const getStartYear = s => parseInt(s.split('–')[0]);
+        figures.sort((a, b) => getStartYear(b.lifespan) - getStartYear(a.lifespan));
+    }    
+
 
 
     const limit = parseInt(req.query.limit);

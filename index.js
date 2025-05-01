@@ -18,15 +18,31 @@ app.set('view engine', 'ejs');
 app.use('/api', router);
 app.get('/api', (req, res) => {
     res.json({
-      message: "Welcome to the African American Studies API",
-      available_endpoints: [
-        "/api/figures",
-        "/api/concepts",
-        "/api/titles",
-        "/api/movements",
-        "/api/organizations"
-      ]
-    });
+        message: "Welcome to Echo Lab: The African American Studies API",
+        available_routes: [
+          "/api/figures",
+          "/api/figures/:id",
+          "/api/figures/search?q=",
+          "/api/concepts",
+          "/api/concepts/:id",
+          "/api/titles",
+          "/api/titles/:id",
+          "/api/movements",
+          "/api/movements/:id"
+        ],
+        filters_supported: [
+          "concept",
+          "movement",
+          "organization",
+          "tag",
+          "name"
+        ],
+        tools: [
+          "pagination (limit & offset)",
+          "sorting (name, lastName, lifespan-asc/desc)",
+          "random figure: /api/figures/random"
+        ]
+      });
   });
 app.use(cors());
 

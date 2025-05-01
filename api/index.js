@@ -4,7 +4,27 @@ getTitlesByConceptId, getConceptsByIds, getTitlesByTitleIds } from '../helper.js
 
 
 const router = express.Router();
-const data = getAllData(); 
+const data = getAllData();
+router.get('/figures/search', (req, res) => {
+    const query = req.query.q;
+
+    if (!query) {
+        return res.status(400).json({ error: 'Missing search query. Use ?q=yoursearchterm' });
+    }
+
+    const lowerQuery = query.toLowerCase();
+
+    const matches = data.figures.filter(figure => {
+        const nameMatch = figure.name.toLowerCase().includes(lowerQuery);
+        const lastNameMatch = figure.lastName.toLowerCase().includes(lowerQuery);
+        const tagMatch = figure.tags.some(tag => tag.toLowerCase().includes(lowerQuery));
+        const bioMatch = figure.bio.toLowerCase().includes(lowerQuery);
+
+        return nameMatch || lastNameMatch || tagMatch || bioMatch;
+    });
+
+    res.json(matches);
+}); 
 router.get('/figures/random', (req, res) => {
     const figures = data.figures;
     const randomIndex = Math.floor(Math.random() * figures.length);

@@ -1,0 +1,59 @@
+{
+  "id": "",
+  "name": "",
+  "lastName": "",
+  "lifespan": "",
+  "birthYear": null,
+  "deathYear": null,
+  "birthplace": "",
+  "professions": [],
+  "bio": "",
+  "tags": [],
+  "titles": [],
+  "organizations": [],
+  "movements": [],
+  "concepts": [],
+  "image": "",
+  "quote": "",
+  "aliases": [],
+  "locations": [],
+  "activeYears": "",
+  "associatedFigures": [],
+  "primarySources": [
+    {
+      "type": "",
+      "title": "",
+      "year": null,
+      "link": ""
+    }
+  ],
+  "secondarySources": [
+    {
+      "type": "",
+      "title": "",
+      "author": "",
+      "year": null,
+      "journal": ""
+    }
+  ],
+  "archivalLocations": [
+    {
+      "institution": "",
+      "collection": "",
+      "link": ""
+    }
+  ],
+  "wikidataId": "",
+  "sameAs": [],
+  "keywords": [],
+  "theoreticalTags": [],
+  "relatedConceptClusters": [
+    {
+      "id": "",
+      "weight": null
+    }
+  ],
+  "influencedBy": [],
+  "influenced": [],
+  "canonical": false
+}

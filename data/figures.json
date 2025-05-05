@@ -1,13 +1,89 @@
 [
-    {
-      "id": "frances-harper",
-      "name": "Frances Ellen Watkins Harper",
-      "lastName": "Harper",
-      "lifespan": "1825–1911",
-      "bio": "Frances Ellen Watkins Harper was a poet, orator, abolitionist, and one of the first African American women to be published in the United States. She was active in the anti-slavery movement and an advocate for women's rights.",
-      "tags": ["poet", "abolitionist", "educator", "feminist"],
-      "titles": ["iola-leroy", "bury-me-in-a-free-land"]
-    },
+  {
+    "id": "frances-harper",
+    "name": "Frances Ellen Watkins Harper",
+    "lastName": "Harper",
+    "lifespan": "1825–1911",
+    "birthYear": 1825,
+    "deathYear": 1911,
+    "birthplace": "Baltimore, Maryland",
+    "professions": ["Poet", "Abolitionist", "Orator", "Educator", "Essayist"],
+    "bio": "Frances Ellen Watkins Harper was a poet, orator, abolitionist, and one of the first African American women to be published in the United States. She was active in the anti-slavery movement and an advocate for women's rights. Her work traversed public lectures, literary writing, and political activism across the 19th century.",
+    "tags": ["poet", "abolitionist", "educator", "feminist"],
+    "titles": ["iola-leroy", "bury-me-in-a-free-land"],
+    "organizations": ["american-womens-temperance-union", "american-anti-slavery-society"],
+    "movements": ["abolition", "reconstruction-era-activism", "black-feminism"],
+    "concepts": ["racial-uplift", "womanhood", "freedom"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Frances_Ellen_Watkins_Harper.jpg",
+    "quote": "We are all bound up together in one great bundle of humanity.",
+    "aliases": ["F.E.W. Harper", "Frances Watkins"],
+    "locations": ["Philadelphia, PA", "Baltimore, MD", "Columbus, OH"],
+    "activeYears": "1850–1900",
+    "associatedFigures": ["frederick-douglass", "sojourner-truth", "ida-b-wells"],
+    "primarySources": [
+      {
+        "type": "speech",
+        "title": "We Are All Bound Up Together",
+        "year": 1866,
+        "link": "https://awpc.cattcenter.iastate.edu/2017/03/09/we-are-all-bound-up-together-1866/"
+      },
+      {
+        "type": "letter",
+        "title": "Letter to William Still",
+        "year": 1858,
+        "link": "https://www.loc.gov/resource/mss42549.mss42549-001_00036_00039/?sp=1"
+      }
+    ],
+    "secondarySources": [
+      {
+        "type": "book",
+        "title": "Frances Ellen Watkins Harper: African American Reform Rhetoric and the Rise of a Modern Nation State",
+        "author": "Michael Stancliff",
+        "year": 2010
+      },
+      {
+        "type": "article",
+        "title": "Recovering Frances E. W. Harper’s Feminist Theory",
+        "author": "Melba Joyce Boyd",
+        "journal": "African American Review",
+        "year": 1995
+      }
+    ],
+    "archivalLocations": [
+      {
+        "institution": "Library of Congress",
+        "collection": "Frances Ellen Watkins Harper Papers",
+        "link": "https://www.loc.gov/collections/"
+      },
+      {
+        "institution": "Schomburg Center for Research in Black Culture",
+        "collection": "19th Century Black Women Writers Archive",
+        "link": "https://www.nypl.org/locations/schomburg"
+      }
+    ],
+    "wikidataId": "Q547425",
+    "sameAs": [
+      "https://en.wikipedia.org/wiki/Frances_Harper",
+      "https://snaccooperative.org/view/66437041",
+      "https://id.loc.gov/authorities/names/n50018738"
+    ],
+    "keywords": ["19th-century Black literature", "temperance", "intersectionality"],
+    "theoreticalTags": ["intersectionality", "Black feminist thought", "collective uplift"],
+    "relatedConceptClusters": [
+      {
+        "id": "freedom",
+        "weight": 0.9
+      },
+      {
+        "id": "racial-uplift",
+        "weight": 0.8
+      }
+    ],
+    "influencedBy": ["william-lloyd-garrison", "phillis-wheatley"],
+    "influenced": ["ida-b-wells", "anna-julia-cooper"],
+    "canonical": true
+  }
+  ,
     {
       "id": "langston-hughes",
       "name": "Langston Hughes",

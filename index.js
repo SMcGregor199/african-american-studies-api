@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 9000;
 const SERVER_TYPE = process.env.SERVER_TYPE || 'local';
 
 app.set('view engine', 'ejs');
-
+app.use(cors());
 app.use('/api', router);
 app.get('/api', (req, res) => {
     res.json({
@@ -44,7 +44,7 @@ app.get('/api', (req, res) => {
         ]
       });
   });
-app.use(cors());
+
 
 app.get('/figures/:id',function(req,res){
     const figureId = req.params.id;

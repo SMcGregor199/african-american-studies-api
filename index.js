@@ -13,7 +13,7 @@ const data = getAllData();
 const PORT = process.env.PORT || 9000;
 const SERVER_TYPE = process.env.SERVER_TYPE || 'local';
 
-app.set('view engine', 'ejs');
+
 app.use(cors());
 app.use('/api', router);
 app.get('/api', (req, res) => {
@@ -64,7 +64,7 @@ app.get('/figures/:id',function(req,res){
     if(req.query.format === 'json'){
         return res.json({figure,titles,concepts});
     } else {
-        res.render("figure", { figure,titles,concepts });
+        res.json({figure,titles,concepts});
     }
 });
 
@@ -87,7 +87,7 @@ app.get('/concepts/:id', (req, res) => {
     if(req.query.format === 'json'){
         return res.json({concept,titles,figures});
     } else {
-        res.render('concept', { concept, titles, figures });
+       return res.json({concept,titles,figures});
     }
 
 });
@@ -110,7 +110,7 @@ app.get('/titles/:id', (req, res) => {
     if(req.query.format === 'json'){
         return res.json({title,figures,concepts});
     } else {
-        res.render("title", { title, figures, concepts });
+        return res.json({title,figures,concepts});
     }
   });
 app.get("/movements/:id", (req, res) => {
@@ -126,7 +126,6 @@ const figures = getFiguresByIds(figureIds,data);
 const titles = getTitlesByTitleIds(titleIds, data);
 const concepts = getConceptsByIds(conceptIds,data);
 
-res.render("movement", { movement, figures, titles, concepts });
 });
 app.get('/organizations/:id', function (req, res) {
     const organization = data.organizations.find(o => o.id === req.params.id);
@@ -142,13 +141,13 @@ app.get('/organizations/:id', function (req, res) {
     const concepts = getConceptsByIds(conceptIds,data);
 
     
-    res.render('organization', { organization, figures, titles, concepts });
+
 });
 
 
 app.get('/',function(req,res){
     const data = getAllData();
-    res.render("home", {  data }); 
+
 });
 
 
@@ -159,7 +158,7 @@ app.use((req, res) => {
     if (req.originalUrl.startsWith('/api')) {
         res.status(404).json({ error: 'API endpoint not found' });
     } else {
-        res.status(404).render('404');
+        res.status(404).json({ error: 'Page not found' });
     }
 });
 

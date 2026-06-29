@@ -3,8 +3,7 @@
     /* ===========================
        Project Structure
     ============================ */
-    "rootDir": "./src",
-    "outDir": "./dist",
+    "rootDir": ".",
 
     /* ===========================
        Node Environment (ESM)
@@ -24,7 +23,7 @@
     /* ===========================
        Output Tools
     ============================ */
-    "sourceMap": true,                // For debugging
+    "noEmit": true,                   // Check the root JavaScript source without writing dist files
 
     /* ===========================
        Module Rules
@@ -36,12 +35,13 @@
     /* ===========================
        Useful Extras
     ============================ */
-    "resolveJsonModule": true         // Allow: import config from "./config.json"
+    "resolveJsonModule": true,        // Allow: import config from "./config.json"
+    "allowJs": true                   // This repo currently uses root JavaScript modules
   },
 
   /* ===========================
      File Inclusion
   ============================ */
-  "include": ["src"],
+  "include": ["*.js", "api/**/*.js", "tests/**/*.js"],
   "exclude": ["node_modules", "dist"]
 }

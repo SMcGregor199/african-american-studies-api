@@ -3,11 +3,12 @@
   "name": "african-american-studies-api",
   "version": "0.1.0",
   "description": "Practice project",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "ts-node src/index.ts"
+    "start": "node index.js",
+    "dev": "node index.js",
+    "test": "node --test"
   },
   "repository": {
     "type": "git",
